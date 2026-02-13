@@ -1,0 +1,201 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Muddu Malleshwara Sanjeevini Mahila Kisan Producer Co. Ltd.</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --green: #2e7d32;
+      --light-green: #4caf50;
+      --gold: #d4a017;
+      --brown: #5d4037;
+      --bg: #f8f9fa;
+    }
+    body {
+      margin:0; font-family: system-ui, sans-serif;
+      background: var(--bg); color: #333;
+      line-height: 1.6;
+    }
+    header {
+      background: linear-gradient(135deg, var(--green), var(--light-green));
+      color: white;
+      text-align: center;
+      padding: 4rem 1rem 3rem;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    h1 { margin:0; font-size: 2.6rem; }
+    .tagline { font-size: 1.3rem; opacity: 0.95; margin-top: 0.6rem; }
+
+    section { padding: 3.5rem 1.5rem; max-width: 1100px; margin: auto; }
+    h2 {
+      color: var(--green);
+      text-align: center;
+      font-size: 2.2rem;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    h2:after {
+      content:""; display:block; width:80px; height:4px;
+      background:var(--light-green); margin:12px auto 0;
+      border-radius:2px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+      transition: transform 0.28s, box-shadow 0.28s;
+      text-align: center;
+      padding-bottom: 1.5rem;
+    }
+    .card:hover { transform: translateY(-8px); box-shadow: 0 12px 32px rgba(0,0,0,0.18); }
+
+    .anim-container {
+      height: 180px; display: flex; align-items: center; justify-content: center;
+      background: linear-gradient(to bottom, #f0f9f0, #e8f5e9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Chilli - 3D rotating */
+    .chilli {
+      font-size: 9rem;
+      animation: spin3d 7s infinite linear;
+      transform-style: preserve-3d;
+    }
+    @keyframes spin3d {
+      from { transform: rotateY(0deg); }
+      to   { transform: rotateY(360deg); }
+    }
+
+    /* Paddy - bouncing grains */
+    .paddy {
+      position: absolute; width: 18px; height: 36px;
+      background: var(--gold); border-radius: 50% 50% 40% 40%;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    .p1 { left:40%; top:30%; animation: bounce 1.8s infinite ease-in-out; }
+    .p2 { left:55%; top:45%; animation: bounce 1.8s 0.4s infinite ease-in-out; }
+    .p3 { left:28%; top:52%; animation: bounce 1.8s 0.8s infinite ease-in-out; }
+    @keyframes bounce {
+      0%,100% { transform: translateY(0) scale(1); }
+      50%     { transform: translateY(-45px) scale(1.08); }
+    }
+
+    /* Sapota - pulsing */
+    .sapota {
+      font-size: 9.5rem;
+      color: #8d5524;
+      animation: pulse 3.2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); }
+      50%     { transform: scale(1.14); }
+    }
+
+    .card h3 { margin: 1.2rem 0 0.6rem; color: var(--green); }
+    .card p  { padding: 0 1.4rem; color: #555; font-size: 0.98rem; }
+
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2.1rem; }
+      h2 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Muddu Malleshwara Sanjeevini</h1>
+  <div class="tagline">Mahila Kisan Producer Company Limited</div>
+</header>
+
+<section id="products">
+  <h2>Our Value-Added Products</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="anim-container">
+        <div class="chilli">🌶️</div>
+      </div>
+      <h3>Chilli Products</h3>
+      <p>Premium chilli powder, pickles, sauces & dry red chillies</p>
+    </div>
+
+    <div class="card">
+      <div class="anim-container">
+        <div class="paddy p1"></div>
+        <div class="paddy p2"></div>
+        <div class="paddy p3"></div>
+      </div>
+      <h3>Paddy / Rice Products</h3>
+      <p>Traditional & organic rice varieties, rice flour, beaten rice</p>
+    </div>
+
+    <div class="card">
+      <div class="anim-container">
+        <div class="sapota">🍏</div> <!-- using green apple emoji as sapota proxy -->
+      </div>
+      <h3>Sapota (Chikoo) Products</h3>
+      <p>Fresh sapota, sapota pulp, jam, squash & dried slices</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="machinery">
+  <h2>Farm Machineries We Use / Promote</h2>
+  <div class="grid">
+
+    <div class="card">
+      <div class="anim-container">
+        <i class="fas fa-tractor" style="font-size:8rem; color:var(--green);"></i>
+      </div>
+      <h3>Tractors & Power Tillers</h3>
+      <p>For land preparation and efficient farming</p>
+    </div>
+
+    <div class="card">
+      <div class="anim-container">
+        <i class="fas fa-seedling" style="font-size:8rem; color:var(--green);"></i>
+      </div>
+      <h3>Planters & Seed Drills</h3>
+      <p>Precision sowing for better yield</p>
+    </div>
+
+    <div class="card">
+      <div class="anim-container">
+        <i class="fas fa-tools" style="font-size:7.5rem; color:var(--green);"></i>
+      </div>
+      <h3>Harvesters & Threshers</h3>
+      <p>Modern equipment for post-harvest processing</p>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <p>© 2025–2026 Muddu Malleshwara Sanjeevini Mahila Kisan Producer Company Limited<br>
+  Empowering women farmers in Karnataka</p>
+</footer>
+
+</body>
+</html>
