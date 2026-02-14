@@ -3,51 +3,57 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Muddu Malleshwara Sanjeevini | ಮುದ್ದು ಮಲ್ಲೇಶ್ವರ ಸಂಜೀವಿನಿ ಮಹಿಳಾ ಕಿಸಾನ್</title>
+  <title>Muddu Malleshwara Sanjeevini Mahila Kisan | ಮುದ್ದು ಮಲ್ಲೇಶ್ವರ ಸಂಜೀವಿನಿ ಮಹಿಳಾ ಕಿಸಾನ್</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
-      --green: #2e7d32;
+      --primary-green: #2e7d32;
       --light-green: #4caf50;
-      --gold: #d4a017;
-      --brown: #5d4037;
-      --bg: #f9fafb;
-      --text: #333;
-      --light: #f1f5f9;
+      --accent-gold: #d4a017;
+      --bg-light: #f9fafb;
+      --card-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      --text-dark: #333;
+      --text-light: #666;
     }
     body {
       margin:0; font-family: system-ui, -apple-system, sans-serif;
-      background: var(--bg); color: var(--text); line-height: 1.6;
+      background: var(--bg-light); color: var(--text-dark); line-height: 1.6;
     }
     header {
-      background: linear-gradient(135deg, var(--green), var(--light-green));
-      color: white;
+      background: white; color: var(--primary-green);
       padding: 1rem 2rem;
       position: sticky; top:0; z-index:100;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      box-shadow: var(--card-shadow);
       display: flex; justify-content: space-between; align-items: center;
     }
     .logo h1 {
-      margin:0; font-size: 1.8rem;
+      margin:0; font-size: 1.8rem; color: var(--primary-green);
     }
     .lang-switcher button {
-      background: white; color: var(--green);
-      border: 2px solid white; border-radius: 20px;
+      background: var(--primary-green); color: white;
+      border: none; border-radius: 20px;
       padding: 0.5rem 1rem; font-weight: bold; cursor: pointer;
-      transition: all 0.3s;
+      transition: background 0.3s;
     }
-    .lang-switcher button:hover { background: var(--light-green); color: white; }
+    .lang-switcher button:hover { background: var(--light-green); }
 
     .hero {
       background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1500595046743-ee5a8a800ec2?w=1600') center/cover;
-      color: white; text-align: center; padding: 8rem 2rem 6rem;
+      color: white; text-align: center; padding: 6rem 2rem;
     }
-    .hero h2 { font-size: 3rem; margin:0; }
-    .hero p  { font-size: 1.4rem; max-width: 800px; margin:1.5rem auto; }
+    .hero h2 { font-size: 2.8rem; margin:0 0 1rem; }
+    .hero .product-hero {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem;
+    }
+    .hero-card { background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 12px; }
+    .hero-card img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; }
+    .hero-card h3 { margin: 1rem 0 0.5rem; }
+    .btn { background: var(--light-green); color: white; padding: 0.8rem 1.5rem; border: none; border-radius: 25px; text-decoration: none; display: inline-block; transition: background 0.3s; }
+    .btn:hover { background: var(--primary-green); }
 
     section { padding: 4rem 2rem; max-width: 1200px; margin: auto; }
     h2 {
-      text-align: center; color: var(--green); font-size: 2.5rem;
+      text-align: center; color: var(--primary-green); font-size: 2.5rem;
       margin-bottom: 2.5rem; position: relative;
     }
     h2:after {
@@ -56,34 +62,57 @@
     }
 
     .features {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 2rem; text-align: center;
     }
     .feature-card {
       background: white; padding: 2rem; border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1); transition: transform 0.3s;
+      box-shadow: var(--card-shadow); transition: transform 0.3s;
     }
-    .feature-card:hover { transform: translateY(-10px); }
-    .feature-card i { font-size: 3rem; color: var(--green); margin-bottom: 1rem; }
+    .feature-card:hover { transform: translateY(-5px); }
+    .feature-card i { font-size: 3rem; color: var(--light-green); margin-bottom: 1rem; }
 
     .products-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 2rem;
     }
     .product-card {
       background: white; border-radius: 12px; overflow: hidden;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.1); text-align: center;
+      box-shadow: var(--card-shadow); text-align: center;
       transition: transform 0.3s;
     }
     .product-card:hover { transform: translateY(-8px); }
-    .anim-container {
-      height: 220px; background: linear-gradient(to bottom, #f0f9f0, #e8f5e9);
-      display: flex; align-items: center; justify-content: center;
-      position: relative;
+    .product-card img { width: 100%; height: 200px; object-fit: cover; }
+    .product-info { padding: 1.5rem; }
+    .product-price { font-size: 1.2rem; font-weight: bold; color: var(--accent-gold); margin: 0.5rem 0; }
+    .select-options { background: var(--light-green); color: white; border: none; padding: 0.5rem 1rem; border-radius: 20px; cursor: pointer; }
+
+    .description { background: var(--bg-light); padding: 3rem; border-radius: 12px; text-align: center; }
+    .categories { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0; }
+    .category-link { background: white; padding: 1rem 2rem; border-radius: 25px; text-decoration: none; color: var(--text-dark); box-shadow: var(--card-shadow); transition: background 0.3s; }
+    .category-link:hover { background: var(--light-green); color: white; }
+
+    .recommended { background: var(--bg-light); }
+    .goodness { background: white; border-radius: 12px; padding: 3rem; text-align: center; }
+    .team { background: var(--bg-light); text-align: center; }
+    .testimonials {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;
     }
+    .testimonial { background: white; padding: 2rem; border-radius: 12px; box-shadow: var(--card-shadow); font-style: italic; }
+    .featured { text-align: center; background: var(--bg-light); padding: 3rem; }
+    .support { text-align: center; background: white; padding: 3rem; border-radius: 12px; }
+
+    footer {
+      background: var(--primary-green); color: white; text-align: center;
+      padding: 3rem 2rem;
+    }
+    footer a { color: white; text-decoration: none; }
+
+    /* Animations from original */
+    .anim-container { height: 220px; background: linear-gradient(to bottom, #f0f9f0, #e8f5e9); display: flex; align-items: center; justify-content: center; position: relative; }
     .chilli { font-size: 10rem; animation: spin3d 8s infinite linear; transform-style: preserve-3d; }
     @keyframes spin3d { from { transform: rotateY(0deg); } to { transform: rotateY(360deg); } }
-    .paddy { position:absolute; width:24px; height:48px; background:var(--gold); border-radius:50% 50% 40% 40%; }
+    .paddy { position:absolute; width:24px; height:48px; background:var(--accent-gold); border-radius:50% 50% 40% 40%; }
     .p1 {left:35%; top:25%; animation:bounce 2s infinite ease-in-out;}
     .p2 {left:50%; top:40%; animation:bounce 2s 0.5s infinite ease-in-out;}
     .p3 {left:65%; top:35%; animation:bounce 2s 1s infinite ease-in-out;}
@@ -91,18 +120,10 @@
     .sapota { font-size: 10rem; color:#8d5524; animation:pulse 4s infinite; }
     @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.15);} }
 
-    .goodness { background: var(--light); border-radius: 12px; padding: 2.5rem; }
-    .testimonials { text-align: center; font-style: italic; color: #555; }
-
-    footer {
-      background: var(--green); color: white; text-align: center;
-      padding: 3rem 2rem; margin-top: 3rem;
-    }
-    footer a { color: white; text-decoration: none; }
-
     @media (max-width: 768px) {
-      .hero h2 { font-size: 2.2rem; }
-      .hero { padding: 6rem 1rem 4rem; }
+      .hero h2 { font-size: 2rem; }
+      .hero { padding: 4rem 1rem; }
+      section { padding: 2rem 1rem; }
     }
   </style>
 </head>
@@ -118,8 +139,30 @@
 </header>
 
 <section class="hero">
-  <h2 data-i18n="heroTitle">Empowering Women Farmers | ಮಹಿಳಾ ರೈತರ ಸಬಲೀಕರಣ</h2>
-  <p data-i18n="heroText">Premium value-added products from chilli, paddy & sapota – nurtured by our women's collective in Karnataka</p>
+  <h2 data-i18n="heroTitle">Muddu Malleshwara Sanjeevini Mahila Kisan Producer Company Limited</h2>
+  <p data-i18n="heroText">Experience Authentic Karnataka Agri Products! From Our Farms to Yours</p>
+  <div class="product-hero">
+    <div class="hero-card">
+      <div class="anim-container"><div class="chilli">🌶️</div></div>
+      <h3 data-i18n="chilliHero">Chilli Products</h3>
+      <a href="#products" class="btn">Shop Now</a>
+    </div>
+    <div class="hero-card">
+      <div class="anim-container"><div class="paddy p1"></div><div class="paddy p2"></div><div class="paddy p3"></div></div>
+      <h3 data-i18n="paddyHero">Paddy Products</h3>
+      <a href="#products" class="btn">Shop Now</a>
+    </div>
+    <div class="hero-card">
+      <div class="anim-container"><div class="sapota">🍏</div></div>
+      <h3 data-i18n="sapotaHero">Sapota Products</h3>
+      <a href="#products" class="btn">Shop Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="welcome">
+  <h2 data-i18n="welcomeTitle">Welcome to Muddu Malleshwara Sanjeevini</h2>
+  <p data-i18n="welcomeText">Where we celebrate the richness of Karnataka's agriculture, empowering women farmers with premium value-added products from chilli, paddy, and sapota.</p>
 </section>
 
 <section id="features">
@@ -127,129 +170,318 @@
   <div class="features">
     <div class="feature-card">
       <i class="fas fa-leaf"></i>
-      <h3 data-i18n="organic">100% Organic & Natural</h3>
-      <p data-i18n="organicText">No chemicals, pure farm-fresh goodness</p>
+      <h3 data-i18n="quality">Quality Assurance</h3>
+      <p data-i18n="qualityText">Premium organic products with the highest quality standards from our women's collective.</p>
     </div>
     <div class="feature-card">
-      <i class="fas fa-users"></i>
-      <h3 data-i18n="womenLed">Women-Led Producer Company</h3>
-      <p data-i18n="womenLedText">Empowering rural women through sustainable agriculture</p>
+      <i class="fas fa-lock"></i>
+      <h3 data-i18n="payments">Secured Transactions</h3>
+      <p data-i18n="paymentsText">Enjoy secure payments while purchasing our farm-fresh products.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fas fa-headset"></i>
+      <h3 data-i18n="support">Online Support</h3>
+      <p data-i18n="supportText">Contact our support team for seamless product assistance!</p>
     </div>
     <div class="feature-card">
       <i class="fas fa-shield-alt"></i>
-      <h3 data-i18n="quality">Quality Assured</h3>
-      <p data-i18n="qualityText">Direct from farm to you – trusted & hygienic</p>
+      <h3 data-i18n="trusted">Trusted Products</h3>
+      <p data-i18n="trustedText">Trusted agri products for health and wellness benefits.</p>
     </div>
   </div>
 </section>
 
 <section id="products">
-  <h2 data-i18n="productsTitle">Our Value-Added Products</h2>
+  <h2 data-i18n="productsTitle">Our Special Agri Products</h2>
   <div class="products-grid">
-
     <div class="product-card">
-      <div class="anim-container">
-        <div class="chilli">🌶️</div>
+      <div class="anim-container"><div class="chilli">🌶️</div></div>
+      <div class="product-info">
+        <h3 data-i18n="chilliProd">Chilli Powder (Dry) – 1 Pack (500g)</h3>
+        <p data-i18n="chilliDesc">Fiery and flavorful, made from premium red chillies.</p>
+        <div class="product-price">₹150.00 – ₹300.00</div>
+        <button class="select-options" onclick="selectOptions('chilli')">Select Options</button>
       </div>
-      <h3 data-i18n="chilli">Chilli Products</h3>
-      <p data-i18n="chilliText">Powder, pickles, sauces – fiery & flavorful</p>
     </div>
-
     <div class="product-card">
-      <div class="anim-container">
-        <div class="paddy p1"></div><div class="paddy p2"></div><div class="paddy p3"></div>
+      <div class="anim-container"><div class="paddy p1"></div><div class="paddy p2"></div><div class="paddy p3"></div></div>
+      <div class="product-info">
+        <h3 data-i18n="paddyProd">Organic Paddy Flour – 1 Pack (500g)</h3>
+        <p data-i18n="paddyDesc">Nutritious rice flour for traditional dishes.</p>
+        <div class="product-price">₹100.00 – ₹200.00</div>
+        <button class="select-options" onclick="selectOptions('paddy')">Select Options</button>
       </div>
-      <h3 data-i18n="paddy">Paddy / Rice Products</h3>
-      <p data-i18n="paddyText">Organic rice, flour, beaten rice – traditional taste</p>
     </div>
-
     <div class="product-card">
-      <div class="anim-container">
-        <div class="sapota">🍏</div>
+      <div class="anim-container"><div class="sapota">🍏</div></div>
+      <div class="product-info">
+        <h3 data-i18n="sapotaProd">Sapota Jam – 1 Jar (500g)</h3>
+        <p data-i18n="sapotaDesc">Naturally sweet and healthy fruit preserve.</p>
+        <div class="product-price">₹120.00 – ₹250.00</div>
+        <button class="select-options" onclick="selectOptions('sapota')">Select Options</button>
       </div>
-      <h3 data-i18n="sapota">Sapota (Chikoo) Products</h3>
-      <p data-i18n="sapotaText">Pulp, jam, squash – naturally sweet & healthy</p>
     </div>
-
+    <!-- More products to match -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300?text=Chilli+Pickle" alt="Chilli Pickle">
+      <div class="product-info">
+        <h3 data-i18n="pickleProd">Chilli Pickle – 1 Jar (500g)</h3>
+        <p data-i18n="pickleDesc">Tangy and spicy homemade pickle.</p>
+        <div class="product-price">₹180.00 – ₹350.00</div>
+        <button class="select-options" onclick="selectOptions('pickle')">Select Options</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300?text=Paddy+Rice" alt="Paddy Rice">
+      <div class="product-info">
+        <h3 data-i18n="riceProd">Beaten Rice – 1 Pack (500g)</h3>
+        <p data-i18n="riceDesc">Crispy and light for quick meals.</p>
+        <div class="product-price">₹90.00 – ₹180.00</div>
+        <button class="select-options" onclick="selectOptions('rice')">Select Options</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300?text=Sapota+Pulp" alt="Sapota Pulp">
+      <div class="product-info">
+        <h3 data-i18n="pulpProd">Sapota Pulp – 1 Pack (500g)</h3>
+        <p data-i18n="pulpDesc">Pure pulp for smoothies and desserts.</p>
+        <div class="product-price">₹140.00 – ₹280.00</div>
+        <button class="select-options" onclick="selectOptions('pulp')">Select Options</button>
+      </div>
+    </div>
+  </div>
+  <div class="description">
+    <h2 data-i18n="descTitle">Chilli Products: Your Source of Healthy Flavors</h2>
+    <p data-i18n="descText">Rich in antioxidants, low glycemic, high fiber – made with 100% organic chillies, natural spices, and pure water. Empowering women farmers in Karnataka.</p>
+    <a href="#products" class="btn">Shop Now</a>
   </div>
 </section>
 
-<section id="goodness" class="goodness">
+<section class="recommended" id="recommended">
+  <h2 data-i18n="recTitle">Recommended For You</h2>
+  <div class="products-grid">
+    <!-- Reuse product cards or add new -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300?text=Chilli+Sauce" alt="Chilli Sauce">
+      <div class="product-info">
+        <h3 data-i18n="sauceProd">Chilli Sauce – 250ml</h3>
+        <p data-i18n="sauceDesc">Spicy condiment for everyday use.</p>
+        <div class="product-price">₹80.00 – ₹160.00</div>
+        <button class="select-options">Select Options</button>
+      </div>
+    </div>
+    <!-- Add 2-3 more similar -->
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300?text=Paddy+Flour" alt="Paddy Flour">
+      <div class="product-info">
+        <h3 data-i18n="flourProd">Paddy Flour Mix – 1kg</h3>
+        <p data-i18n="flourDesc">Versatile for baking and cooking.</p>
+        <div class="product-price">₹120.00 – ₹240.00</div>
+        <button class="select-options">Select Options</button>
+      </div>
+    </div>
+    <div class="product-card">
+      <img src="https://via.placeholder.com/300?text=Sapota+Juice" alt="Sapota Juice">
+      <div class="product-info">
+        <h3 data-i18n="juiceProd">Sapota Squash – 500ml</h3>
+        <p data-i18n="juiceDesc">Refreshing and nutritious drink.</p>
+        <div class="product-price">₹100.00 – ₹200.00</div>
+        <button class="select-options">Select Options</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="categories">
+  <a href="#chilli" class="category-link" data-i18n="catChilli">Chilli Products (3 items)</a>
+  <a href="#paddy" class="category-link" data-i18n="catPaddy">Paddy Products (3 items)</a>
+  <a href="#sapota" class="category-link" data-i18n="catSapota">Sapota Products (3 items)</a>
+</div>
+<a href="#products" class="btn" style="display:block; margin:2rem auto; width:200px;" data-i18n="shopAll">Shop All Categories</a>
+
+<section class="goodness">
   <h2 data-i18n="goodnessTitle">The Goodness of Our Products</h2>
-  <p data-i18n="goodnessText">Rich in nutrients, supports local farmers, gluten-free options, heart-healthy, energy-boosting – straight from Karnataka's fertile lands.</p>
+  <p data-i18n="goodnessText">Gluten-free, heart-healthy, energy-boosting, rich in nutrients – supporting local women farmers and sustainable agriculture in Karnataka's fertile lands.</p>
+  <p><strong data-i18n="bulkOrder">For bulk orders, WhatsApp now: +91-XXXXXXXXXX</strong></p>
+</section>
+
+<section class="team">
+  <h2 data-i18n="teamTitle">Our Team</h2>
+  <p data-i18n="teamText">A women-led producer company, supported by local agriculture departments. Our products are available on major platforms, empowering rural women through ethical farming.</p>
 </section>
 
 <section id="testimonials">
   <h2 data-i18n="testimonialsTitle">What Our Customers Say</h2>
   <div class="testimonials">
-    <p data-i18n="testimonial1">"Pure & authentic products – love supporting women farmers!"</p>
-    <p data-i18n="testimonial2">"Best chilli powder I've tasted – full of flavor!"</p>
+    <div class="testimonial">
+      <p data-i18n="test1">"Authentic and pure products – proud to support women farmers!" – Vidya K., 2026</p>
+    </div>
+    <div class="testimonial">
+      <p data-i18n="test2">"Best organic chilli powder – full of natural flavor!" – Hanamant M., 2026</p>
+    </div>
+    <div class="testimonial">
+      <p data-i18n="test3">"Healthy sapota jam that's delicious and nutritious." – Nagesh J., 2026</p>
+    </div>
+    <div class="testimonial">
+      <p data-i18n="test4">"Reliable quality from farm to table." – Arunkumar T., 2026</p>
+    </div>
+    <div class="testimonial">
+      <p data-i18n="test5">"Empowering initiative with great products!" – Avinash G., 2026</p>
+    </div>
   </div>
+</section>
+
+<section class="featured">
+  <h2 data-i18n="featuredTitle">Featured in National Spotlight</h2>
+  <p data-i18n="featuredText">Our women's collective and sustainable products highlighted for empowering rural Karnataka – promoting health and heritage.</p>
+  <a href="#products" class="btn">Explore Products</a>
+</section>
+
+<section class="support">
+  <h2 data-i18n="supportTitle">Online Support</h2>
+  <p data-i18n="supportPhone">Phone: +91-XXXXXXXXXX</p>
+  <p data-i18n="supportEmail">Email: info@muddu-malleshwara.com</p>
 </section>
 
 <footer>
   <p data-i18n="footer">&copy; 2026 Muddu Malleshwara Sanjeevini Mahila Kisan Producer Company Limited</p>
-  <p data-i18n="contact">Contact: +91-XXXXXXXXXX | email@example.com</p>
+  <p><a href="#" data-i18n="wishlist">Wishlist</a> | <a href="https://x.com" data-i18n="socialX">[X]</a></p>
 </footer>
 
 <script>
-  // Translations object
+  // Language switcher (expanded with all new keys)
   const translations = {
     en: {
       title: "Muddu Malleshwara Sanjeevini",
-      heroTitle: "Empowering Women Farmers",
-      heroText: "Premium value-added products from chilli, paddy & sapota – nurtured by our women's collective in Karnataka",
+      heroTitle: "Muddu Malleshwara Sanjeevini Mahila Kisan Producer Company Limited",
+      heroText: "Experience Authentic Karnataka Agri Products! From Our Farms to Yours",
+      chilliHero: "Chilli Products",
+      paddyHero: "Paddy Products",
+      sapotaHero: "Sapota Products",
+      welcomeTitle: "Welcome to Muddu Malleshwara Sanjeevini",
+      welcomeText: "Where we celebrate the richness of Karnataka's agriculture, empowering women farmers with premium value-added products from chilli, paddy, and sapota.",
       featuresTitle: "Why Choose Us",
-      organic: "100% Organic & Natural",
-      organicText: "No chemicals, pure farm-fresh goodness",
-      womenLed: "Women-Led Producer Company",
-      womenLedText: "Empowering rural women through sustainable agriculture",
-      quality: "Quality Assured",
-      qualityText: "Direct from farm to you – trusted & hygienic",
-      productsTitle: "Our Value-Added Products",
-      chilli: "Chilli Products",
-      chilliText: "Powder, pickles, sauces – fiery & flavorful",
-      paddy: "Paddy / Rice Products",
-      paddyText: "Organic rice, flour, beaten rice – traditional taste",
-      sapota: "Sapota (Chikoo) Products",
-      sapotaText: "Pulp, jam, squash – naturally sweet & healthy",
+      quality: "Quality Assurance",
+      qualityText: "Premium organic products with the highest quality standards from our women's collective.",
+      payments: "Secured Transactions",
+      paymentsText: "Enjoy secure payments while purchasing our farm-fresh products.",
+      support: "Online Support",
+      supportText: "Contact our support team for seamless product assistance!",
+      trusted: "Trusted Products",
+      trustedText: "Trusted agri products for health and wellness benefits.",
+      productsTitle: "Our Special Agri Products",
+      chilliProd: "Chilli Powder (Dry) – 1 Pack (500g)",
+      chilliDesc: "Fiery and flavorful, made from premium red chillies.",
+      paddyProd: "Organic Paddy Flour – 1 Pack (500g)",
+      paddyDesc: "Nutritious rice flour for traditional dishes.",
+      sapotaProd: "Sapota Jam – 1 Jar (500g)",
+      sapotaDesc: "Naturally sweet and healthy fruit preserve.",
+      pickleProd: "Chilli Pickle – 1 Jar (500g)",
+      pickleDesc: "Tangy and spicy homemade pickle.",
+      riceProd: "Beaten Rice – 1 Pack (500g)",
+      riceDesc: "Crispy and light for quick meals.",
+      pulpProd: "Sapota Pulp – 1 Pack (500g)",
+      pulpDesc: "Pure pulp for smoothies and desserts.",
+      descTitle: "Chilli Products: Your Source of Healthy Flavors",
+      descText: "Rich in antioxidants, low glycemic, high fiber – made with 100% organic chillies, natural spices, and pure water. Empowering women farmers in Karnataka.",
+      recTitle: "Recommended For You",
+      sauceProd: "Chilli Sauce – 250ml",
+      sauceDesc: "Spicy condiment for everyday use.",
+      flourProd: "Paddy Flour Mix – 1kg",
+      flourDesc: "Versatile for baking and cooking.",
+      juiceProd: "Sapota Squash – 500ml",
+      juiceDesc: "Refreshing and nutritious drink.",
+      catChilli: "Chilli Products (3 items)",
+      catPaddy: "Paddy Products (3 items)",
+      catSapota: "Sapota Products (3 items)",
+      shopAll: "Shop All Categories",
       goodnessTitle: "The Goodness of Our Products",
-      goodnessText: "Rich in nutrients, supports local farmers, gluten-free options, heart-healthy, energy-boosting – straight from Karnataka's fertile lands.",
+      goodnessText: "Gluten-free, heart-healthy, energy-boosting, rich in nutrients – supporting local women farmers and sustainable agriculture in Karnataka's fertile lands.",
+      bulkOrder: "For bulk orders, WhatsApp now",
+      teamTitle: "Our Team",
+      teamText: "A women-led producer company, supported by local agriculture departments. Our products are available on major platforms, empowering rural women through ethical farming.",
       testimonialsTitle: "What Our Customers Say",
-      testimonial1: "\"Pure & authentic products – love supporting women farmers!\"",
-      testimonial2: "\"Best chilli powder I've tasted – full of flavor!\"",
+      test1: "\"Authentic and pure products – proud to support women farmers!\" – Vidya K., 2026",
+      test2: "\"Best organic chilli powder – full of natural flavor!\" – Hanamant M., 2026",
+      test3: "\"Healthy sapota jam that's delicious and nutritious.\" – Nagesh J., 2026",
+      test4: "\"Reliable quality from farm to table.\" – Arunkumar T., 2026",
+      test5: "\"Empowering initiative with great products!\" – Avinash G., 2026",
+      featuredTitle: "Featured in National Spotlight",
+      featuredText: "Our women's collective and sustainable products highlighted for empowering rural Karnataka – promoting health and heritage.",
+      supportTitle: "Online Support",
+      supportPhone: "Phone: +91-XXXXXXXXXX",
+      supportEmail: "Email: info@muddu-malleshwara.com",
       footer: "© 2026 Muddu Malleshwara Sanjeevini Mahila Kisan Producer Company Limited",
-      contact: "Contact: +91-XXXXXXXXXX | email@example.com"
+      wishlist: "Wishlist",
+      socialX: "[X]"
     },
     kn: {
       title: "ಮುದ್ದು ಮಲ್ಲೇಶ್ವರ ಸಂಜೀವಿನಿ",
-      heroTitle: "ಮಹಿಳಾ ರೈತರ ಸಬಲೀಕರಣ",
-      heroText: "ಮೆಣಸಿನಕಾಯಿ, ಭತ್ತ ಮತ್ತು ಸಪೋಟಾ ಉತ್ಪನ್ನಗಳು – ನಮ್ಮ ಮಹಿಳಾ ಸಮೂಹದಿಂದ ಕರ್ನಾಟಕದಲ್ಲಿ ಬೆಳೆಸಲ್ಪಟ್ಟವು",
+      heroTitle: "ಮುದ್ದು ಮಲ್ಲೇಶ್ವರ ಸಂಜೀವಿನಿ ಮಹಿಳಾ ಕಿಸಾನ್ ಉತ್ಪಾದಕ ಕಂಪನಿ ಲಿಮಿಟೆಡ್",
+      heroText: "ನೈಜ ಕರ್ನಾಟಕ ಕೃಷಿ ಉತ್ಪನ್ನಗಳ ಅನುಭವ! ನಮ್ಮ ಫಾರ್ಮ್‌ಗಳಿಂದ ನಿಮ್ಮ ಮನೆಗೆ",
+      chilliHero: "ಮೆಣಸಿನಕಾಯಿ ಉತ್ಪನ್ನಗಳು",
+      paddyHero: "ಭತ್ತ ಉತ್ಪನ್ನಗಳು",
+      sapotaHero: "ಸಪೋಟಾ ಉತ್ಪನ್ನಗಳು",
+      welcomeTitle: "ಮುದ್ದು ಮಲ್ಲೇಶ್ವರ ಸಂಜೀವಿನಿಗೆ ಸ್ವಾಗತ",
+      welcomeText: "ನಾವು ಕರ್ನಾಟಕದ ಕೃಷಿಯ ಸಮೃದ್ಧಿಯನ್ನು ಆಚರಿಸುತ್ತೇವೆ, ಮಹಿಳಾ ರೈತರನ್ನು ಸಬಲೀಕರಿಸುತ್ತೇವೆ ಮೆಣಸಿನಕಾಯಿ, ಭತ್ತ ಮತ್ತು ಸಪೋಟಾದಿಂದ ಪ್ರೀಮಿಯಂ ಮೌಲ್ಯವರ್ಧಿತ ಉತ್ಪನ್ನಗಳೊಂದಿಗೆ.",
       featuresTitle: "ನಮ್ಮನ್ನು ಏಕೆ ಆಯ್ಕೆ ಮಾಡಬೇಕು",
-      organic: "100% ಸಾವಯವ ಮತ್ತು ನೈಸರ್ಗಿಕ",
-      organicText: "ರಾಸಾಯನಿಕಗಳಿಲ್ಲ, ಶುದ್ಧ ರೈತ-ತಾಜಾ ಉತ್ಪನ್ನಗಳು",
-      womenLed: "ಮಹಿಳಾ ನೇತೃತ್ವದ ಉತ್ಪಾದಕ ಸಂಸ್ಥೆ",
-      womenLedText: "ಸುಸ್ಥಿರ ಕೃಷಿಯ ಮೂಲಕ ಗ್ರಾಮೀಣ ಮಹಿಳೆಯರ ಸಬಲೀಕರಣ",
       quality: "ಗುಣಮಟ್ಟ ಭರವಸೆ",
-      qualityText: "ರೈತರಿಂದ ನೇರವಾಗಿ ನಿಮಗೆ – ವಿಶ್ವಾಸಾರ್ಹ ಮತ್ತು ಸ್ವಚ್ಛ",
-      productsTitle: "ನಮ್ಮ ಮೌಲ್ಯವರ್ಧಿತ ಉತ್ಪನ್ನಗಳು",
-      chilli: "ಮೆಣಸಿನಕಾಯಿ ಉತ್ಪನ್ನಗಳು",
-      chilliText: "ಪುಡಿ, ಉಪ್ಪಿನಕಾಯಿ, ಸಾಸ್ – ಖಾರ ಮತ್ತು ರುಚಿಕರ",
-      paddy: "ಭತ್ತ / ಅಕ್ಕಿ ಉತ್ಪನ್ನಗಳು",
-      paddyText: "ಸಾವಯವ ಅಕ್ಕಿ, ಹಿಟ್ಟು, ಅವಲಕ್ಕಿ – ಸಾಂಪ್ರದಾಯಿಕ ರುಚಿ",
-      sapota: "ಸಪೋಟಾ (ಚಿಕ್ಕೂ) ಉತ್ಪನ್ನಗಳು",
-      sapotaText: "ಪಲ್ಪ್, ಜಾಮ್, ಸ್ಕ್ವಾಶ್ – ಸಹಜವಾಗಿ ಸಿಹಿ ಮತ್ತು ಆರೋಗ್ಯಕರ",
+      qualityText: "ನಮ್ಮ ಮಹಿಳಾ ಸಮೂಹದಿಂದ ಅತ್ಯುನ್ನತ ಗುಣಮಟ್ಟದ ಮಾನದಂಡಗಳೊಂದಿಗೆ ಪ್ರೀಮಿಯಂ ಸಾವಯವ ಉತ್ಪನ್ನಗಳು.",
+      payments: "ನಿರಾಪದ ವಹಿವಾಟುಗಳು",
+      paymentsText: "ನಮ್ಮ ರೈತ-ತಾಜಾ ಉತ್ಪನ್ನಗಳನ್ನು ಖರೀದಿಸುವಾಗ ನಿರಾಪದ ಪಾವತಿಗಳನ್ನು ಆನಂದಿಸಿ.",
+      support: "ಆನ್‌ಲೈನ್ ಬೆಂಬಲ",
+      supportText: "ಉತ್ಪನ್ನ ಸಹಾಯಕ್ಕಾಗಿ ನಮ್ಮ ಬೆಂಬಲ ತಂಡವನ್ನು ಸಂಪರ್ಕಿಸಿ!",
+      trusted: "ವಿಶ್ವಾಸಾರ್ಹ ಉತ್ಪನ್ನಗಳು",
+      trustedText: "ಆರೋಗ್ಯ ಮತ್ತು ಕ್ಷೇಮಕ್ಕಾಗಿ ವಿಶ್ವಾಸಾರ್ಹ ಕೃಷಿ ಉತ್ಪನ್ನಗಳು.",
+      productsTitle: "ನಮ್ಮ ವಿಶೇಷ ಕೃಷಿ ಉತ್ಪನ್ನಗಳು",
+      chilliProd: "ಮೆಣಸಿನಕಾಯಿ ಪುಡಿ (ಉಣ್ಣೆ) – 1 ಪ್ಯಾಕ್ (500g)",
+      chilliDesc: "ಅಗ್ನಿಶಾಖ ಮತ್ತು ರುಚಿಕರ, ಪ್ರೀಮಿಯಂ ಕೆಂಪು ಮೆಣಸಿನಕಾಯಿಗಳಿಂದ ತಯಾರಿಸಲ್ಪಟ್ಟದ್ದು.",
+      paddyProd: "ಸಾವಯವ ಭತ್ತ ಹಿಟ್ಟು – 1 ಪ್ಯಾಕ್ (500g)",
+      paddyDesc: "ಸಾಂಪ್ರದಾಯಿಕ ವ್ಯಂಜನಗಳಿಗಾಗಿ ಪೌಷ್ಟಿಕ ಅಕ್ಕಿ ಹಿಟ್ಟು.",
+      sapotaProd: "ಸಪೋಟಾ ಜಾಮ್ – 1 ಜಾರ್ (500g)",
+      sapotaDesc: "ಸಹಜವಾಗಿ ಸಿಹಿ ಮತ್ತು ಆರೋಗ್ಯಕರ ಫಲದ ಉಳ್ಳೆ.",
+      pickleProd: "ಮೆಣಸಿನಕಾಯಿ ಉಪ್ಪಿನಕಾಯಿ – 1 ಜಾರ್ (500g)",
+      pickleDesc: "ಕಚ್ಚಾ ಮತ್ತು ಖಾರ ಹೋಮ್‌ಮೇಡ್ ಉಪ್ಪಿನಕಾಯಿ.",
+      riceProd: "ಅವಲಕ್ಕಿ – 1 ಪ್ಯಾಕ್ (500g)",
+      riceDesc: "ತ್ವರಿತ ಆಹಾರಗಳಿಗಾಗಿ ಕ್ರಿಸ್ಪಿ ಮತ್ತು ಲೈಟ್.",
+      pulpProd: "ಸಪೋಟಾ ಪಲ್ಪ್ – 1 ಪ್ಯಾಕ್ (500g)",
+      pulpDesc: "ಸ್ಮೂತಿಗಳು ಮತ್ತು ಡೆಸರ್ಟ್‌ಗಳಿಗಾಗಿ ಶುದ್ಧ ಪಲ್ಪ್.",
+      descTitle: "ಮೆಣಸಿನಕಾಯಿ ಉತ್ಪನ್ನಗಳು: ಆರೋಗ್ಯಕರ ರುಚಿಗಳ ಮೂಲ",
+      descText: "ಆಂಟಿಆಕ್ಸಿಡೆಂಟ್‌ಗಳಲ್ಲಿ ಸಮೃದ್ಧ, ಕಡಿಮೆ ಗ್ಲೈಸೆಮಿಕ್, ಹೈ ಫೈಬರ್ – 100% ಸಾವಯವ ಮೆಣಸಿನಕಾಯಿ, ನೈಸರ್ಗಿಕ ಮಸಾಲೆಗಳು ಮತ್ತು ಶುದ್ಧ ನೀರುಗಳಿಂದ ತಯಾರಿಸಲ್ಪಟ್ಟದ್ದು. ಕರ್ನಾಟಕದಲ್ಲಿ ಮಹಿಳಾ ರೈತರ ಸಬಲೀಕರಣ.",
+      recTitle: "ನಿಮಗಾಗಿ ಸಿಫಾರ್ಸು",
+      sauceProd: "ಮೆಣಸಿನಕಾಯಿ ಸಾಸ್ – 250ml",
+      sauceDesc: "ಪ್ರತಿದಿನದ ಬಳಕೆಗಾಗಿ ಖಾರ ಕಂಡಿಮೆಂಟ್.",
+      flourProd: "ಭತ್ತ ಹಿಟ್ಟು ಮಿಶ್ರಣ – 1kg",
+      flourDesc: "ಬೇಕಿಂಗ್ ಮತ್ತು ಕುಕಿಂಗ್‌ಗಾಗಿ ಬಹುಮುಖ.",
+      juiceProd: "ಸಪೋಟಾ ಸ್ಕ್ವಾಶ್ – 500ml",
+      juiceDesc: "ರಿಫ್ರೆಶಿಂಗ್ ಮತ್ತು ಪೌಷ್ಟಿಕ ಪಾನೀಯ.",
+      catChilli: "ಮೆಣಸಿನಕಾಯಿ ಉತ್ಪನ್ನಗಳು (3 ಐಟಂಗಳು)",
+      catPaddy: "ಭತ್ತ ಉತ್ಪನ್ನಗಳು (3 ಐಟಂಗಳು)",
+      catSapota: "ಸಪೋಟಾ ಉತ್ಪನ್ನಗಳು (3 ಐಟಂಗಳು)",
+      shopAll: "ಎಲ್ಲಾ ವರ್ಗಗಳ ಶಾಪ್",
       goodnessTitle: "ನಮ್ಮ ಉತ್ಪನ್ನಗಳ ಗುಣಗಳು",
-      goodnessText: "ಪೋಷಕಾಂಶಗಳಲ್ಲಿ ಸಮೃದ್ಧ, ಸ್ಥಳೀಯ ರೈತರ ಬೆಂಬಲ, ಗ್ಲೂಟೆನ್-ಮುಕ್ತ ಆಯ್ಕೆಗಳು, ಹೃದಯ-ಆರೋಗ್ಯಕರ, ಶಕ್ತಿ-ಬೂಸ್ಟಿಂಗ್ – ಕರ್ನಾಟಕದ ಫಲವತ್ತಾದ ಭೂಮಿಯಿಂದ ನೇರವಾಗಿ.",
+      goodnessText: "ಗ್ಲೂಟೆನ್-ಮುಕ್ತ, ಹೃದಯ-ಆರೋಗ್ಯಕರ, ಶಕ್ತಿ-ಬೂಸ್ಟಿಂಗ್, ಪೋಷಕಾಂಶಗಳಲ್ಲಿ ಸಮೃದ್ಧ – ಸ್ಥಳೀಯ ಮಹಿಳಾ ರೈತರ ಬೆಂಬಲ ಮತ್ತು ಕರ್ನಾಟಕದ ಫಲವತ್ತಾದ ಭೂಮಿಯಲ್ಲಿ ಸುಸ್ಥಿರ ಕೃಷಿ.",
+      bulkOrder: "ಬೃಹತ್ ಆರ್ಡರ್‌ಗಳಿಗಾಗಿ WhatsApp ಈಗ",
+      teamTitle: "ನಮ್ಮ ತಂಡ",
+      teamText: "ಮಹಿಳಾ ನೇತೃತ್ವದ ಉತ್ಪಾದಕ ಕಂಪನಿ, ಸ್ಥಳೀಯ ಕೃಷಿ ಇಲಾಖೆಗಳ ಬೆಂಬಲ. ನಮ್ಮ ಉತ್ಪನ್ನಗಳು ಪ್ರಮುಖ ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳಲ್ಲಿ ಲಭ್ಯ, ನೈತಿಕ ಕೃಷಿಯ ಮೂಲಕ ಗ್ರಾಮೀಣ ಮಹಿಳೆಯರ ಸಬಲೀಕರಣ.",
       testimonialsTitle: "ನಮ್ಮ ಗ್ರಾಹಕರು ಏನು ಹೇಳುತ್ತಾರೆ",
-      testimonial1: "\"ಶುದ್ಧ ಮತ್ತು ದೃಢೀಕರಿಸಿದ ಉತ್ಪನ್ನಗಳು – ಮಹಿಳಾ ರೈತರನ್ನು ಬೆಂಬಲಿಸಲು ಇಷ್ಟಪಡುತ್ತೇನೆ!\"",
-      testimonial2: "\"ಇದುವರೆಗೆ ರುಚಿಸಿದ ಅತ್ಯುತ್ತಮ ಮೆಣಸಿನಕಾಯಿ ಪುಡಿ – ರುಚಿಯಲ್ಲಿ ತುಂಬಿದೆ!\"",
+      test1: "\"ನೈಜ ಮತ್ತು ಶುದ್ಧ ಉತ್ಪನ್ನಗಳು – ಮಹಿಳಾ ರೈತರ ಬೆಂಬಲಕ್ಕೆ ಹೆಮ್ಮೆ!\" – ವಿದ್ಯಾ ಕೆ., ೨೦೨೬",
+      test2: "\"ಅತ್ಯುತ್ತಮ ಸಾವಯವ ಮೆಣಸಿನಕಾಯಿ ಪುಡಿ – ನೈಸರ್ಗಿಕ ರುಚಿಯಲ್ಲಿ ತುಂಬಿದೆ!\" – ಹನಮಂತ್ ಎಂ., ೨೦೨೬",
+      test3: "\"ಆರೋಗ್ಯಕರ ಸಪೋಟಾ ಜಾಮ್ ಇದು ರುಚಿಕರ ಮತ್ತು ಪೌಷ್ಟಿಕ.\" – ನಾಗೇಶ್ ಜೆ., ೨೦೨೬",
+      test4: "\"ಫಾರ್ಮ್‌ನಿಂದ ಟೇಬಲ್‌ಗೆ ವಿಶ್ವಾಸಾರ್ಹ ಗುಣಮಟ್ಟ.\" – ಅರುಣ್‌ಕುಮಾರ್ ಟಿ., ೨೦೨೬",
+      test5: "\"ಉತ್ಪನ್ನಗಳೊಂದಿಗೆ ಸಬಲೀಕರಣ ಉಪಕ್ರಮ!\" – ಅವಿನಾಷ್ ಜಿ., ೨೦೨೬",
+      featuredTitle: "ರಾಷ್ಟ್ರೀಯ ಸ್ಪಾಟ್‌ಲೈಟ್‌ನಲ್ಲಿ ಪ್ರಮುಖ",
+      featuredText: "ನಮ್ಮ ಮಹಿಳಾ ಸಮೂಹ ಮತ್ತು ಸುಸ್ಥಿರ ಉತ್ಪನ್ನಗಳು ಗ್ರಾಮೀಣ ಕರ್ನಾಟಕವನ್ನು ಸಬಲೀಕರಿಸಲು ಹೈಲೈಟ್ – ಆರೋಗ್ಯ ಮತ್ತು ಪರಂಪರೆಯನ್ನು ಉತ್ತೇಜಿಸುತ್ತದೆ.",
+      supportTitle: "ಆನ್‌ಲೈನ್ ಬೆಂಬಲ",
+      supportPhone: "ಫೋನ್: +91-XXXXXXXXXX",
+      supportEmail: "ಇಮೇಲ್: info@muddu-malleshwara.com",
       footer: "© ೨೦೨೬ ಮುದ್ದು ಮಲ್ಲೇಶ್ವರ ಸಂಜೀವಿನಿ ಮಹಿಳಾ ಕಿಸಾನ್ ಉತ್ಪಾದಕ ಕಂಪನಿ ಲಿಮಿಟೆಡ್",
-      contact: "ಸಂಪರ್ಕ: +91-XXXXXXXXXX | ಇಮೇಲ್@example.com"
+      wishlist: "ವಿಶ್‌ಲಿಸ್ಟ್",
+      socialX: "[X]"
     }
   };
 
-  let currentLang = "en"; // default
+  let currentLang = "en";
 
   function updateContent() {
     document.querySelectorAll("[data-i18n]").forEach(el => {
@@ -258,7 +490,6 @@
         el.innerHTML = translations[currentLang][key];
       }
     });
-    // Update button text
     document.getElementById("langToggle").innerText = currentLang === "en" ? "ಕನ್ನಡ" : "English";
   }
 
@@ -267,8 +498,19 @@
     updateContent();
   }
 
-  // Initial load
   updateContent();
+
+  // Simple JS for "Select Options" - simulates dropdown/modal
+  function selectOptions(product) {
+    alert(`Selected: ${product} - Choose quantity (1-10 packs). For orders, contact WhatsApp: +91-XXXXXXXXXX`);
+    // Could expand to a real modal with options
+  }
+
+  // Wishlist simulation
+  document.querySelector('a[href="#"]').addEventListener('click', (e) => {
+    e.preventDefault();
+    alert('Wishlist: Add products here. Coming soon!');
+  });
 </script>
 
 </body>
